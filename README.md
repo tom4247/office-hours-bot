@@ -23,7 +23,7 @@
 | SEC-019 | Not at all | There is no answer-reporting feature, no pseudonymized reports, and no day-rounded record storage in the prototype. |
 | SEC-020 | Partly | The sample app does not expose hidden instructions or private data because there is no true multi-user or secret material pipeline, but it does not implement the formal refusal and leakage controls described in the requirement. |
 | SEC-021 | Partly | The current build keeps everything in a single in-memory knowledge base and avoids cross-student leakage by accident, but it does not enforce the formal three-part request boundary or per-student context isolation. |
-| SEC-022 | Not at all | There are no rate limits, message-length checks, or daily/minute request caps in the prototype. |
+| SEC-022 | Partly | The server rejects messages over 2,000 characters and enforces 40 questions per UTC calendar day and 10 per rolling minute for each typed name. Because the name is not verified, a student can bypass limits by changing it; in-memory counts also do not persist across restarts or synchronize across server instances. |
 | SEC-023 | Not at all | The app has no AI spend tracking, no hard budget cap, and no provider-side spending limit enforcement. |
 | SEC-024 | Not at all | There is no staff upload workflow or per-user upload quota enforcement in the current prototype. |
 | SEC-025 | Not at all | There are no staff actions, denied-access attempts, or audit logs for uploads, roster changes, or operator access. |

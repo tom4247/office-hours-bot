@@ -1,6 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { matchCourseAnswer } from './course-answer';
 import HomePage from './page';
+
+beforeEach(() => {
+  global.fetch = async (_input, init) => {
+    const body = JSON.parse(String(init?.body)) as { question: string };
+    return {
+      ok: true,
+      json: async () => matchCourseAnswer(body.question),
+    } as Response;
+  };
+});
 
 describe('Story 1: student asks course materials question', () => {
   it('renders the student question form and allows a grounded answer', async () => {
