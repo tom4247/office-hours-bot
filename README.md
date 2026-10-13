@@ -31,3 +31,9 @@
 | SEC-027 | Not at all | The prototype stores no secrets in code, but there is no secrets manager, environment guardrails, or production credential policy in place. |
 | SEC-028 | Not at all | There is no uploaded-PDF storage model, no staff-only file access policy, and no restriction against student file access. |
 | SEC-029 | Not at all | The app has no incident detection, no professor notification process, and no data-incident response workflow. |
+
+## HW3 Scope and Non-Goals
+
+- Real payments are a non-goal; use a "Simulated payment" button wherever a payment interaction is needed.
+- Real authentication is a non-goal; use a name typed into a text box wherever a signed-in user is needed.
+- Do not use a database. Keep data in memory on the server; it resets on every deploy.
